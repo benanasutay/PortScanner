@@ -46,3 +46,28 @@ The tool automatically detects the running mode. If arguments are provided, it r
 Displays all available flags and options.
 ```bash
 py PortScanner.py -h
+
+usage: PortScanner.py [-h] [-p PORTS] [-t THREADS] [-s {tcp,udp,syn}] [--os] [-o OUTPUT] [--gui] [target]
+
+Advanced Python Port Scanner (CLI & GUI)
+
+positional arguments:
+  target                Target IP address (e.g. 192.168.1.1)
+
+options:
+  -h, --help            show this help message and exit
+  -p PORTS, --ports PORTS
+                        Port range (default: 1-1024)
+  -t THREADS, --threads THREADS
+                        Number of concurrent threads (default: 100)
+  -s {tcp,udp,syn}, --scan-type {tcp,udp,syn}
+                        Type of scan (tcp/udp/syn)
+  --os                  Enable OS Detection (TTL-based)
+  -o OUTPUT, --output OUTPUT
+                        Save results to a JSON file
+  --gui                 Force launch Graphical User Interface
+
+Examples:
+  py PortScanner.py 192.168.1.1 --os
+  py PortScanner.py 127.0.0.1 -p 1-100 -t 50
+  py PortScanner.py --gui
